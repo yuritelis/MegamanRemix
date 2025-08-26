@@ -370,3 +370,27 @@ Received Import Request.
 Start importing Assets/Scripts/MyLoading.cs using Guid(f52f9ebe7e53a5d48a1a20862cd63309) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd2b0e277b597019872b3e5932fd316d') in 0.0011646 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
+========================================================================
+Received Import Request.
+  Time since last request: 698.734350 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(c45b7be3af53a5545a80450e64fc63e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(c45b7be3af53a5545a80450e64fc63e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb498df0aec126ebeecd7d9d8b061ca9') in 0.14259 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
+
+========================================================================
+Received Import Request.
+  Time since last request: 43.460854 seconds.
+  path: Assets/AnimaKirby/JumpDown.anim
+  artifactKey: Guid(2db93e4dad8811c4aa1615e37a590862) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AnimaKirby/JumpDown.anim using Guid(2db93e4dad8811c4aa1615e37a590862) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a51568c8f9df6641a0eea47244334bb9') in 0.0029098 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.175013 seconds.
+  path: Assets/AnimaKirby/Intro.anim
+  artifactKey: Guid(526b1354f664a1c44aecb77419dc08c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AnimaKirby/Intro.anim using Guid(526b1354f664a1c44aecb77419dc08c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8cdc4e5ea62675a20ffc895e94c97bbf') in 0.0017486 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
