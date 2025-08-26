@@ -66,7 +66,7 @@ public class Control : MonoBehaviour
 
         // Adiciona uma força para mover o personagem.
         if(jumptimeside<0.1f)
-        rdb.AddForce(new Vector2(xmov * 20 / (rdb.velocity.magnitude + 1), 0));
+        rdb.AddForce(new Vector2(xmov * 20 / (rdb.linearVelocity.magnitude + 1), 0));
 
         RaycastHit2D hit;
 
@@ -107,7 +107,7 @@ public class Control : MonoBehaviour
         {
             jumptime = Mathf.Lerp(jumptime, 0, Time.fixedDeltaTime * 10);
             rdb.AddForce(Vector2.up * jumptime, ForceMode2D.Impulse);
-            if (rdb.velocity.y < 0)
+            if (rdb.linearVelocity.y < 0)
             {
                 jumpagain = false;
             }
@@ -134,15 +134,15 @@ public class Control : MonoBehaviour
     // Função para inverter a direção do personagem (visual).
     void Reverser()
     {
-        if (rdb.velocity.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
-        if (rdb.velocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (rdb.linearVelocity.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (rdb.linearVelocity.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     // Função para inverter a direção do personagem (física).
     void PhisicalReverser()
     {
-        if (rdb.velocity.x > 0.1f) transform.rotation = Quaternion.Euler(0, 0, 0);
-        if (rdb.velocity.x < -0.1f) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (rdb.linearVelocity.x > 0.1f) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (rdb.linearVelocity.x < -0.1f) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     // Detecção de colisão com objetos marcados com a tag "Damage".
