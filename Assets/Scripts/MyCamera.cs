@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyCamera : MonoBehaviour {
+public class MyCamera : MonoBehaviour 
+{
     [SerializeField]
     GameObject target;
     Rigidbody2D rdb;
     [SerializeField]
     float advanceFactor = 2;
-	
 	
 	void LateUpdate () {
         if (target)
@@ -17,7 +17,7 @@ public class MyCamera : MonoBehaviour {
             {
                 transform.position = Vector3.Lerp(transform.position,
                     new Vector3(target.transform.position.x +
-                    rdb.velocity.x * advanceFactor
+                    rdb.linearVelocity.x * advanceFactor
                     , target.transform.position.y
                     , transform.position.z), Time.smoothDeltaTime);
             }

@@ -9,10 +9,9 @@ public class MyLoading : MonoBehaviour
     AsyncOperation operation;
     static string level;
     public Slider slider;
-    // Start is called before the first frame update
+
     void Start()
     {
-
         operation = SceneManager.LoadSceneAsync(level);
         operation.allowSceneActivation = false;
         Invoke("AllowScene", 2);
@@ -23,7 +22,6 @@ public class MyLoading : MonoBehaviour
         operation.allowSceneActivation = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         slider.value = Mathf.Lerp(slider.value, operation.progress,Time.deltaTime*5);

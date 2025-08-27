@@ -13,15 +13,12 @@ public class Damage : MonoBehaviour
     [SerializeField]
     ParticleSystem explosion;
     
-
-    // Start is called before the first frame update
     void Start()
     {
         initiallives = lives;
      
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -70,7 +67,6 @@ public class Damage : MonoBehaviour
 
     IEnumerator Blink()
     {
-
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         if (!renderer)
         {
@@ -87,6 +83,4 @@ public class Damage : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
-
-    
 }
