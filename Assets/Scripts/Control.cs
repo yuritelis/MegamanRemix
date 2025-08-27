@@ -13,32 +13,25 @@ public class Control : MonoBehaviour
 
     void Start()
     {
-        // Método para inicializações. 
         jumpagain = true;
     }
 
     void Update()
     {
-        // Captura o movimento horizontal do jogador.
         xmov = Input.GetAxis("Horizontal");
 
-        // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
         {
-          
                 doublejump = true;
-            
         }
         if (Input.GetButtonUp("Jump"))
         {
             jumpagain = true;
         }
 
-        // Define o estado de pulo com base na entrada do usuário.
         if (Input.GetButton("Jump")&& jumpagain)
         {
             jump = true;
-            
         }
         else
         {
@@ -48,10 +41,8 @@ public class Control : MonoBehaviour
             jumptimeside = 0;
         }
 
-        // Desativa o estado de "Fire" no Animator.
-        anima.SetBool("Fire", false);
+        anima.SetBool("Attack", false);
 
-        // Ativa o efeito de fogo e define o estado "Fire" no Animator quando o botão de fogo é pressionado.
         if (Input.GetButtonDown("Fire1"))
         {
             fire.Emit(1);
@@ -93,14 +84,11 @@ public class Control : MonoBehaviour
         }
     }
 
-    // Rotina de pulo (parte física).
     private void JumpRoutine(RaycastHit2D hit)
     {
-        // Verifica a distância do chão e aplica uma força de pulo se necessário.
         if (hit.distance < 0.1f)
         {
             jumptime = 1;
-           
         }
 
         if (jump)
@@ -115,7 +103,6 @@ public class Control : MonoBehaviour
         
     }
 
-    // Rotina de pulo lateral.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
         if (hitside.distance < 0.3f)

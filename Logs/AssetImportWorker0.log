@@ -1,29 +1,29 @@
 Using pre-set license
 Built from '6000.0/release' branch; Version is '6000.0.35f1 (9a3bc604008a) revision 10107846'; Using compiler version '193933523'; Build Type 'Release'
-OS: 'Windows 11  (10.0.26100) 64bit Professional' Language: 'pt' Physical Memory: 15754 MB
+OS: 'Windows 11  (10.0.22631) 64bit Education' Language: 'pt' Physical Memory: 16053 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
-C:\Program Files\Unity\Hub\Editor\6000.0.35f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\6000.0.35f1-x86_64\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/VAIO/OneDrive/Documentos/repositórios/MegamanRemix
+C:/Users/ra00360160/Documents/repositórios/MegamanRemix
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53497
+61734
 -job-worker-count
-7
+9
 -background-job-worker-count
 8
 -gc-helper-count
 1
-Successfully changed project path to: C:/Users/VAIO/OneDrive/Documentos/repositórios/MegamanRemix
-C:/Users/VAIO/OneDrive/Documentos/repositórios/MegamanRemix
+Successfully changed project path to: C:/Users/ra00360160/Documents/repositórios/MegamanRemix
+C:/Users/ra00360160/Documents/repositórios/MegamanRemix
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,13 +59,17 @@ C:/Users/VAIO/OneDrive/Documentos/repositórios/MegamanRemix
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [804]  Target information:
+Player connection [13796]  Target information:
 
-Player connection [804]  * "[IP] 192.168.0.220 [Port] 0 [Flags] 2 [Guid] 2576487582 [EditorId] 2576487582 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-PU0DV07) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [13796]  * "[IP] 172.17.12.19 [Port] 0 [Flags] 2 [Guid] 4019308777 [EditorId] 4019308777 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CBJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [804] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [804] Host joined alternative multi-casting on [225.0.0.222:34997]...
-JobSystem: Creating JobQueue using job-worker-count value 7
+Player connection [13796]  * "[IP] 172.18.160.1 [Port] 0 [Flags] 2 [Guid] 4019308777 [EditorId] 4019308777 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CBJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [13796]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 4019308777 [EditorId] 4019308777 [Version] 1048832 [Id] WindowsEditor(7,DSP-BRJ3055CBJ) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Unable to join player connection multicast group (err: 10013).
+Player connection [13796] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 9
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -76,59 +80,66 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 0.50 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.15 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.35f1 (9a3bc604008a)
-[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/VAIO/OneDrive/Documentos/repositórios/MegamanRemix/Assets
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ra00360160/Documents/repositórios/MegamanRemix/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon(TM) Graphics (ID=0x164c)
-    Vendor:   ATI
-    VRAM:     7877 MB
-    Driver:   30.0.13014.8
+    Renderer: NVIDIA T400 4GB (ID=0x1ff2)
+    Vendor:   NVIDIA
+    VRAM:     3943 MB
+    Driver:   31.0.15.5362
 Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56784
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56300
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.639959 seconds.
-- Loaded All Assemblies, in 18.022 seconds
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1-x86_64/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.002409 seconds.
+- Loaded All Assemblies, in  0.337 seconds
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 1776 ms
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.683 seconds
-Domain Reload Profiling: 18700ms
-	BeginReloadAssembly (15423ms)
+- Finished resetting the current domain, in  2.091 seconds
+Domain Reload Profiling: 2428ms
+	BeginReloadAssembly (125ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (672ms)
-	RebuildNativeTypeToScriptingClass (26ms)
-	initialDomainReloadingComplete (750ms)
-	LoadAllAssembliesAndSetupDomain (1145ms)
-		LoadAssemblies (15417ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (129ms)
+		LoadAssemblies (125ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (1139ms)
-			TypeCache.Refresh (1136ms)
-				TypeCache.ScanAssembly (1109ms)
+		AnalyzeDomain (127ms)
+			TypeCache.Refresh (125ms)
+				TypeCache.ScanAssembly (113ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (684ms)
+	FinalizeReload (2091ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (611ms)
+		SetupLoadedEditorAssemblies (2058ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (45ms)
-			SetLoadedEditorAssemblies (10ms)
-			BeforeProcessingInitializeOnLoad (104ms)
-			ProcessInitializeOnLoadAttributes (304ms)
-			ProcessInitializeOnLoadMethodAttributes (149ms)
+			InitializePlatformSupportModulesInManaged (1857ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (42ms)
+			ProcessInitializeOnLoadAttributes (104ms)
+			ProcessInitializeOnLoadMethodAttributes (52ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,164 +148,75 @@ Domain Reload Profiling: 18700ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  8.347 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+- Loaded All Assemblies, in  0.373 seconds
+Refreshing native plugins compatible for Editor in 0.09 ms, found 0 plugins.
+Native extension for iOS target not found
+Native extension for Android target not found
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.710 seconds
-Domain Reload Profiling: 9050ms
-	BeginReloadAssembly (330ms)
+- Finished resetting the current domain, in  0.316 seconds
+Domain Reload Profiling: 689ms
+	BeginReloadAssembly (146ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (12ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (59ms)
-	RebuildCommonClasses (81ms)
-	RebuildNativeTypeToScriptingClass (22ms)
-	initialDomainReloadingComplete (86ms)
-	LoadAllAssembliesAndSetupDomain (7820ms)
-		LoadAssemblies (7454ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (155ms)
+		LoadAssemblies (191ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (569ms)
-			TypeCache.Refresh (540ms)
-				TypeCache.ScanAssembly (523ms)
-			BuildScriptInfoCaches (22ms)
-			ResolveRequiredComponents (4ms)
-	FinalizeReload (711ms)
+		AnalyzeDomain (53ms)
+			TypeCache.Refresh (40ms)
+				TypeCache.ScanAssembly (30ms)
+			BuildScriptInfoCaches (10ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (316ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (520ms)
+		SetupLoadedEditorAssemblies (223ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (5ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (133ms)
-			ProcessInitializeOnLoadAttributes (281ms)
-			ProcessInitializeOnLoadMethodAttributes (84ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (117ms)
+			ProcessInitializeOnLoadMethodAttributes (34ms)
+			AfterProcessingInitializeOnLoad (2ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (11ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.15 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 8 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1451 unused Assets / (412.8 KB). Loaded Objects now: 1952.
-Memory consumption went from 63.9 MB to 63.5 MB.
-Total: 10.044900 ms (FindLiveObjects: 0.441800 ms CreateObjectMapping: 0.314700 ms MarkObjects: 8.217200 ms  DeleteObjects: 1.067800 ms)
+Unloading 1451 unused Assets / (219.8 KB). Loaded Objects now: 1952.
+Memory consumption went from 64.4 MB to 64.2 MB.
+Total: 4.214200 ms (FindLiveObjects: 0.164300 ms CreateObjectMapping: 0.065500 ms MarkObjects: 3.623600 ms  DeleteObjects: 0.359000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 256876.639251 seconds.
-  path: Assets/AnimaKirby
-  artifactKey: Guid(35ab1338b1c9b9e4ab138e5f1edf8a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby using Guid(35ab1338b1c9b9e4ab138e5f1edf8a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e5d9ef72bb26a32388c8f6cce11a522') in 0.0089285 seconds
+  Time since last request: 1024.526203 seconds.
+  path: Assets/LightweightRenderPipelineAsset.asset
+  artifactKey: Guid(1f2593a23deb33d45995c0f33e1e0914) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/LightweightRenderPipelineAsset.asset using Guid(1f2593a23deb33d45995c0f33e1e0914) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2f04bbb3a0fc15f090e91edf36dba011') in 0.0098763 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 120.408438 seconds.
-  path: Assets/AnimaKirby/KirbyContro.controller
-  artifactKey: Guid(c5e89f3c8ff38204189708f9263fffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby/KirbyContro.controller using Guid(c5e89f3c8ff38204189708f9263fffee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2514b8fa25ad39f7776b54de1b56e69f') in 0.0243164 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 0.000014 seconds.
+  path: Assets/car.png
+  artifactKey: Guid(9116e76985d3c2e4abe20c5fe9058b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/car.png using Guid(9116e76985d3c2e4abe20c5fe9058b17) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60bbb62863afbc33ebf1bf378ac235f5') in 0.0979646 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
-========================================================================
-Received Import Request.
-  Time since last request: 269.381495 seconds.
-  path: Assets/AnimaKirby/Player.controller
-  artifactKey: Guid(da51dd59ec07674479b8c945b32717ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby/Player.controller using Guid(da51dd59ec07674479b8c945b32717ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6d00991458ba4f2b926415caba71eba9') in 0.0066521 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.889679 seconds.
-  path: Assets/AnimaKirby/PlayerKirby.controller
-  artifactKey: Guid(da51dd59ec07674479b8c945b32717ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby/PlayerKirby.controller using Guid(da51dd59ec07674479b8c945b32717ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec30af75bfdfc79a0f32f972482798ae') in 0.0051308 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 13.654269 seconds.
-  path: Assets/AnimaKirby/JumpUP.anim
-  artifactKey: Guid(933e49f3f2a87484687fa35d270c5ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby/JumpUP.anim using Guid(933e49f3f2a87484687fa35d270c5ccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb0da0b9a448f64c595adfcea3c76673') in 0.0041147 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.812462 seconds.
-  path: Assets/AnimaKirby/Idle.anim
-  artifactKey: Guid(c07c10acda189f442b3d569960e39551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/AnimaKirby/Idle.anim using Guid(c07c10acda189f442b3d569960e39551) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '24c21b76c66b225e86eb9b3f07fd9e01') in 0.0019215 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.605929 seconds.
-  path: Assets/kirbysprites
-  artifactKey: Guid(4953280275f1e0b45ba43eb67ce13414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kirbysprites using Guid(4953280275f1e0b45ba43eb67ce13414) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9e76b2cf2988e0f8ffbab4d4dc30dd41') in 0.0009893 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.053041 seconds.
-  path: Assets/kirbysprites/kirby sprite sheet.png
-  artifactKey: Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kirbysprites/kirby sprite sheet.png using Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52bf3224027b262127c0f3fe36e0c5d8') in 1.0838538 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 208
-
-========================================================================
-Received Import Request.
-  Time since last request: 25.882929 seconds.
-  path: Assets/kirbysprites/kirby sprite sheet.png
-  artifactKey: Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kirbysprites/kirby sprite sheet.png using Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'beb92b93527daa3f191fd5fb506c3c5c') in 1.0610803 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 208
-
-========================================================================
-Received Import Request.
-  Time since last request: 26.988355 seconds.
-  path: Assets/kirbysprites/kirby sprite sheet.png
-  artifactKey: Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/kirbysprites/kirby sprite sheet.png using Guid(a6ad832f531fa4640aed0c1a2cd9ea2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d47059679a1d3f6c88d6ea76d3e59a6') in 1.1547278 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 213
-
-========================================================================
-Received Import Request.
-  Time since last request: 543.545239 seconds.
-  path: Assets/Prefabs
-  artifactKey: Guid(41e67a3485ff8da44bf4495e2e883354) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs using Guid(41e67a3485ff8da44bf4495e2e883354) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8aa3009af9d2b890de559f7d47972e0a') in 0.0007598 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.045943 seconds.
-  path: Assets/Prefabs/Baril01.prefab
-  artifactKey: Guid(530452a3669f48d4e9e34de2108bab85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Baril01.prefab using Guid(530452a3669f48d4e9e34de2108bab85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30d29f60740f4d919432ed2ae51e85ac') in 0.1728945 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000183 seconds.
-  path: Assets/Prefabs/Player.prefab
-  artifactKey: Guid(c45b7be3af53a5545a80450e64fc63e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Player.prefab using Guid(c45b7be3af53a5545a80450e64fc63e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '070968fba763ca698c555cab01d52d04') in 0.1258626 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 90
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000061 seconds.
-  path: Assets/Prefabs/PlayerMM.prefab
-  artifactKey: Guid(d42a24c9cbd336e46aa519ab65fd03d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/PlayerMM.prefab using Guid(d42a24c9cbd336e46aa519ab65fd03d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f4275cb4a19e99e8b061ba643c682eba') in 0.0676108 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 87
-
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

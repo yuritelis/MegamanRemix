@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 //singleton
-public class LevelManager : MonoBehaviour {
-
+public class LevelManager : MonoBehaviour 
+{
     public static LevelManager instance;
     public SpriteRenderer lifebar;
     public float life = 1;
@@ -13,13 +13,11 @@ public class LevelManager : MonoBehaviour {
     public MyCamera mycamera;
     bool wait = false;
 
-    // Use this for initialization
     void Start () {
         instance = this;
        
     }
 	
-	// Update is called once per frame
 	void Update () {
        
         if (!playerinstance && !wait)

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyCamera : MonoBehaviour {
+public class MyCamera : MonoBehaviour 
+{
     [SerializeField]
     GameObject target;
     Rigidbody2D rdb;
     [SerializeField]
     float advanceFactor = 2;
-	
 	
 	void LateUpdate () {
         if (target)

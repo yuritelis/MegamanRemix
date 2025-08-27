@@ -3,21 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrabPistol : MonoBehaviour {
+public class CrabPistol : MonoBehaviour 
+{
     public enum CrabState { WalkL,WalkR,Attack,Berserk,Dead};
     public CrabState crabState;
     Animator anim;
     Rigidbody2D rdb;
     float counter;
     float counterlimit;
-    // Use this for initialization
+
     void Start () {
         anim = GetComponent<Animator>();
         rdb = GetComponent<Rigidbody2D>();
         counterlimit = UnityEngine.Random.Range(2.1f, 4);
     }
 	
-	// Update is called once per frame
 	void Update () {
         switch (crabState)
         {
