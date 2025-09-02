@@ -7,31 +7,38 @@ public class Control : MonoBehaviour
     public Animator anima; // Referência ao Animator do personagem.
     float xmov; // Variável para guardar o movimento horizontal.
     public Rigidbody2D rdb; // Referência ao Rigidbody2D do personagem.
-    bool jump, doublejump,jumpagain; // Flags para controle de pulo e pulo duplo.
+    bool jump, doublejump, jumpagain; // Flags para controle de pulo e pulo duplo.
     float jumptime, jumptimeside; // Controla a duração dos pulos.
     public ParticleSystem fire; // Sistema de partículas para o efeito de fogo.
 
     void Start()
     {
+        // Método para inicializações. 
         jumpagain = true;
     }
 
     void Update()
     {
+        // Captura o movimento horizontal do jogador.
         xmov = Input.GetAxis("Horizontal");
 
+        // Verifica se o botão de pulo foi pressionado e controla o pulo duplo.
         if (Input.GetButtonDown("Jump"))
         {
-                doublejump = true;
+
+            doublejump = true;
+
         }
         if (Input.GetButtonUp("Jump"))
         {
             jumpagain = true;
         }
 
-        if (Input.GetButton("Jump")&& jumpagain)
+        // Define o estado de pulo com base na entrada do usuário.
+        if (Input.GetButton("Jump") && jumpagain)
         {
             jump = true;
+
         }
         else
         {
@@ -41,8 +48,10 @@ public class Control : MonoBehaviour
             jumptimeside = 0;
         }
 
-        anima.SetBool("Attack", false);
+        // Desativa o estado de "Fire" no Animator.
+        anima.SetBool("Fire", false);
 
+        // Ativa o efeito de fogo e define o estado "Fire" no Animator quando o botão de fogo é pressionado.
         if (Input.GetButtonDown("Fire1"))
         {
             fire.Emit(1);
@@ -56,8 +65,8 @@ public class Control : MonoBehaviour
         anima.SetFloat("Velocity", Mathf.Abs(xmov)); // Define a velocidade no Animator.
 
         // Adiciona uma força para mover o personagem.
-        if(jumptimeside<0.1f)
-        rdb.AddForce(new Vector2(xmov * 20 / (rdb.linearVelocity.magnitude + 1), 0));
+        if (jumptimeside < 0.1f)
+            rdb.AddForce(new Vector2(xmov * 20 / (rdb.linearVelocity.magnitude + 1), 0));
 
         RaycastHit2D hit;
 
@@ -66,8 +75,8 @@ public class Control : MonoBehaviour
         if (hit)
         {
             anima.SetFloat("Height", hit.distance);
-            if(jumptimeside<0.1)
-            JumpRoutine(hit); // Chama a rotina de pulo.
+            if (jumptimeside < 0.1)
+                JumpRoutine(hit); // Chama a rotina de pulo.
         }
 
         RaycastHit2D hitright;
@@ -76,7 +85,7 @@ public class Control : MonoBehaviour
         hitright = Physics2D.Raycast(transform.position + Vector3.up * 0.5f, transform.right, 1);
         if (hitright)
         {
-            if (hitright.distance < 0.3f && hit.distance>0.5f)
+            if (hitright.distance < 0.3f && hit.distance > 0.5f)
             {
                 JumpRoutineSide(hitright); // Chama a rotina de pulo lateral.
             }
@@ -84,11 +93,14 @@ public class Control : MonoBehaviour
         }
     }
 
+    // Rotina de pulo (parte física).
     private void JumpRoutine(RaycastHit2D hit)
     {
+        // Verifica a distância do chão e aplica uma força de pulo se necessário.
         if (hit.distance < 0.1f)
         {
             jumptime = 1;
+
         }
 
         if (jump)
@@ -100,9 +112,10 @@ public class Control : MonoBehaviour
                 jumpagain = false;
             }
         }
-        
+
     }
 
+    // Rotina de pulo lateral.
     private void JumpRoutineSide(RaycastHit2D hitside)
     {
         if (hitside.distance < 0.3f)
@@ -112,9 +125,9 @@ public class Control : MonoBehaviour
 
         if (doublejump)
         {
-           // PhisicalReverser();
+            // PhisicalReverser();
             jumptimeside = Mathf.Lerp(jumptimeside, 0, Time.fixedDeltaTime * 10);
-            rdb.AddForce((hitside.normal + Vector2.up) * jumptimeside , ForceMode2D.Impulse);
+            rdb.AddForce((hitside.normal + Vector2.up) * jumptimeside, ForceMode2D.Impulse);
         }
     }
 
