@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Barrel : MonoBehaviour {
-    public int lives = 5;
+    [SerializeField] private int lives = 5;
     public ParticleSystem smoke;
     public ParticleSystem explosion;
     Renderer rend;
