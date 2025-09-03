@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel : MonoBehaviour {
+public class Barrel : MonoBehaviour 
+{
     [SerializeField] private int lives = 5;
     public ParticleSystem smoke;
     public ParticleSystem explosion;
     Renderer rend;
-    // Use this for initialization
-    void Start () {
-        rend = GetComponent<Renderer>();
 
+    // Use this for initialization
+    void Start () 
+    {
+        rend = GetComponent<Renderer>();
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		
 	}
 

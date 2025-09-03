@@ -3246,7 +3246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7464,7 +7464,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -11.8, y: -0.37}
+  m_Offset: {x: -11.8, y: -0.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9971,6 +9971,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2480087598224082979, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2480087598224082979, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603360227876936671, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4425573687190619539, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9979,7 +9994,7 @@ PrefabInstance:
     - target: {fileID: 4425573687190619539, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.44
+      value: -9.301
       objectReference: {fileID: 0}
     - target: {fileID: 4425573687190619539, guid: 0e043e685ceb4bf4cbf6a1a1f26ac441,
         type: 3}

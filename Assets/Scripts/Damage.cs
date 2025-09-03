@@ -16,7 +16,6 @@ public class Damage : MonoBehaviour
     void Start()
     {
         initiallives = lives;
-     
     }
 
     void Update()
@@ -26,7 +25,6 @@ public class Damage : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-
         StartCoroutine(Blink());
 
         lives--;
@@ -47,9 +45,6 @@ public class Damage : MonoBehaviour
             renderer.enabled = false;
             Destroy(gameObject, 0.8f);
         }
-
-        
-      
     }
     /// <summary>
     /// cria uma particula e liga ela
