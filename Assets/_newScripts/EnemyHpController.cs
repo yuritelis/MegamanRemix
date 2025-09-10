@@ -2,25 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damage : MonoBehaviour
+public class EnemyHpController : MonoBehaviour
 {
-    [SerializeField]
-    private int lives=4;
+    [SerializeField] private int lives = 4;
+    [SerializeField] ParticleSystem smoke;
+    [SerializeField] ParticleSystem explosion;
 
-    int initiallives;
-    [SerializeField]
-    ParticleSystem smoke;
-    [SerializeField]
-    ParticleSystem explosion;
-    
+    int initialLives;
+
     void Start()
     {
-        initiallives = lives;
+        initialLives = lives;
     }
 
     void Update()
     {
-        
+
     }
 
     private void OnParticleCollision(GameObject other)
@@ -28,7 +25,7 @@ public class Damage : MonoBehaviour
         StartCoroutine(Blink());
 
         lives--;
-        if (lives < initiallives/2)
+        if (lives < initialLives / 2)
         {
             CreateandPlay(smoke);
         }
