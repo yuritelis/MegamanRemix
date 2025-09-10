@@ -4,13 +4,11 @@ public class PlayerController : MonoBehaviour
 {
     float horizontalInput;
     float moveSpeed = 1f;
-    bool isFacingRight = true;
     float jumpForce = 5f;
-    bool isGrounded;
 
-    bool jump, doublejump, jumpagain;
-    float jumptime, jumptimeside;
-    float xmov;
+    bool isFacingRight = true;
+    bool isGrounded;
+    bool doubleJump;
 
     [SerializeField] GameObject particleObject;
 
@@ -29,16 +27,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        bool hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
+        Debug.DrawRay(transform.position, Vector2.down * 0.5f, Color.red);
+
+        isGrounded = hit;
+
         horizontalInput = Input.GetAxis("Horizontal");
 
         FlipSprite();
+        //GroundCheck();
 
-        /*if(Input.GetButtonDown("Jump") && isGrounded)
+        if(Input.GetButtonDown("Jump") && isGrounded || Input.GetButtonDown("Jump") && doubleJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            isGrounded = false;
             anim.SetBool("isJumping", !isGrounded);
-        }*/
+        }
 
         if (Input.GetButtonDown("Fire1"))
         {
@@ -55,68 +58,13 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = new Vector2 (horizontalInput * moveSpeed, rb.linearVelocity.y);
         anim.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
-        //anim.SetFloat("yVelocity", rb.linearVelocity.y);
-
-        if (jumptimeside < 0.1f)
-            rb.AddForce(new Vector2(xmov * 20 / (rb.linearVelocity.magnitude + 1), 0));
-
-        RaycastHit2D hit;
-        hit = Physics2D.Raycast(transform.position, Vector2.down);
-
-        if (hit)
-        {
-            anim.SetFloat("yVelocity", hit.distance);
-            if (jumptimeside < 0.1)
-                JumpRoutine(hit);
-        }
-
-        RaycastHit2D hitright;
-
-        hitright = Physics2D.Raycast(transform.position + Vector3.up * 0.5f, transform.right, 1);
-        if (hitright)
-        {
-            if (hitright.distance < 0.3f && hit.distance > 0.5f)
-            {
-                JumpRoutineSide(hitright);
-            }
-            Debug.DrawLine(hitright.point, transform.position + Vector3.up * 0.5f);
-        }
+        anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
-    private void JumpRoutine(RaycastHit2D hit)
+    /*private void Jump()
     {
-        if (hit.distance < 0.1f)
-        {
-            jumptime = 1;
-        }
-
-        if (jump)
-        {
-            jumptime = Mathf.Lerp(jumptime, 0, Time.fixedDeltaTime * 10);
-            rb.AddForce(Vector2.up * jumptime, ForceMode2D.Impulse);
-            if (rb.linearVelocity.y < 0)
-            {
-                jumpagain = false;
-            }
-        }
-
-    }
-
-    private void JumpRoutineSide(RaycastHit2D hitside)
-    {
-        if (hitside.distance < 0.3f)
-        {
-            jumptimeside = 6;
-        }
-
-        if (doublejump)
-        {
-            // PhisicalReverser();
-            jumptimeside = Mathf.Lerp(jumptimeside, 0, Time.fixedDeltaTime * 10);
-            rb.AddForce((hitside.normal + Vector2.up) * jumptimeside, ForceMode2D.Impulse);
-        }
-    }
-
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
+    }*/
 
     void FlipSprite()
     {
@@ -127,6 +75,11 @@ public class PlayerController : MonoBehaviour
             ls.x *= -1f;
             transform.localScale = ls;
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)

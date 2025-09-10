@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4818943952941690}
   - component: {fileID: 198728478396322416}
   - component: {fileID: 199512484145934560}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Particle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3625,7 +3625,7 @@ ParticleSystem:
     type: 1
     collisionMode: 1
     colliderForce: 20
-    multiplyColliderForceByParticleSize: 0
+    multiplyColliderForceByParticleSize: 1
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
     m_Planes:
@@ -3799,7 +3799,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 315
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4857,7 +4857,7 @@ GameObject:
   - component: {fileID: 4265785684531494}
   - component: {fileID: 198152627373153688}
   - component: {fileID: 199060009217854926}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: SubEmitter0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9762,9 +9762,9 @@ GameObject:
   - component: {fileID: 50516375948837600}
   - component: {fileID: 70380289719868578}
   - component: {fileID: 95318738018095452}
-  - component: {fileID: 2641431295384387285}
   - component: {fileID: 3450834809315207276}
-  m_Layer: 2
+  - component: {fileID: 1154612989206185474}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9830,7 +9830,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 8793639957104055765, guid: d35fd7fca2ee4ea40bcb2a39bf5e8e6e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9929,8 +9929,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &2641431295384387285
-CapsuleCollider2D:
+--- !u!114 &3450834809315207276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216579830471146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cdaa3ef9e835e5439a6cdfde19fbc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleObject: {fileID: 1121994957329538}
+--- !u!61 &1154612989206185474
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9959,23 +9972,19 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.41}
-  m_Size: {x: 0.3, y: 0.12}
-  m_Direction: 1
---- !u!114 &3450834809315207276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216579830471146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cdaa3ef9e835e5439a6cdfde19fbc44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleObject: {fileID: 1121994957329538}
+  m_Offset: {x: -0.015, y: -0.08}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 0.43, y: 0.47}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.41, y: 0.72}
+  m_EdgeRadius: 0
