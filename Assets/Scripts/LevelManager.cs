@@ -13,13 +13,13 @@ public class LevelManager : MonoBehaviour
     public MyCamera mycamera;
     bool wait = false;
 
-    void Start () {
+    void Start () 
+    {
         instance = this;
-       
     }
 	
-	void Update () {
-       
+	void Update () 
+    {
         if (!playerinstance && !wait)
         {
             StartCoroutine(CreatePlayer());
@@ -32,8 +32,8 @@ public class LevelManager : MonoBehaviour
                 Destroy(playerinstance);
             }
         }
-        
     }
+
     IEnumerator CreatePlayer()
     {
         wait = true;
