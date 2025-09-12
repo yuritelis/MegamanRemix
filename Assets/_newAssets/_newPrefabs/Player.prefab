@@ -3799,11 +3799,11 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 315
+      m_Bits: 379
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
@@ -10003,4 +10003,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpAtual: 4
   hpMax: 4
-  hpUI: {fileID: 0}

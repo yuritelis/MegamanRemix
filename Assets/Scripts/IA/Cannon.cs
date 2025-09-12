@@ -37,9 +37,6 @@ public class Cannon : MonoBehaviour
             case 1:
                 Aim();
             break;
-            case 2:
-                Follow();
-            break;
         }   
     }
 
@@ -60,18 +57,6 @@ public class Cannon : MonoBehaviour
             cooldown = 1;
         }
         cooldown -= Time.deltaTime;
-    }
-    void Follow()
-    {
-        if (!target) return;
-        if (target.transform.position.x > transform.position.x)
-        {
-            rb.AddForce(Vector2.right * 100);
-        }
-        if (target.transform.position.x < transform.position.x)
-        {
-            rb.AddForce(Vector2.right * -100);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

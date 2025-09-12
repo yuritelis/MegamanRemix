@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -35,7 +37,6 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         FlipSprite();
-        //GroundCheck();
 
         if(Input.GetButtonDown("Jump") && isGrounded || Input.GetButtonDown("Jump") && doubleJump)
         {
@@ -61,11 +62,6 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("yVelocity", rb.linearVelocity.y);
     }
 
-    /*private void Jump()
-    {
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Force);
-    }*/
-
     void FlipSprite()
     {
         if(isFacingRight && horizontalInput < 0f || !isFacingRight && horizontalInput > 0f)
@@ -74,25 +70,6 @@ public class PlayerController : MonoBehaviour
             Vector3 ls = transform.localScale;
             ls.x *= -1f;
             transform.localScale = ls;
-        }
-    }
-
-    private bool IsGrounded()
-    {
-        return Physics2D.Raycast(transform.position, Vector2.down, 0.5f, LayerMask.GetMask("Ground"));
-    }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        isGrounded = true;
-        anim.SetBool("isJumping", !isGrounded);
-    }*/
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Damage") || collision.collider.CompareTag("Enemy"))
-        {
-            LevelManager.instance.LowDamage();
         }
     }
 }

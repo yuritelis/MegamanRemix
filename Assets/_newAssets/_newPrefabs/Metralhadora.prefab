@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8842574077697961263}
   - component: {fileID: 3700626046772141629}
   - component: {fileID: 3835633232451716929}
+  - component: {fileID: 2829986387434766574}
+  - component: {fileID: 1440445225463864132}
   m_Layer: 0
   m_Name: Metralhadora
   m_TagString: Untagged
@@ -104,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15abec26fc2c11469654f6e767ab3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 4
+  hpMax: 4
   smoke: {fileID: 2006679684889494683, guid: f2d4b9c58d4b5d94189a2e2529719069, type: 3}
   explosion: {fileID: 8404128881088415328, guid: 697af36a47e004848ae3bf5f891609ba,
     type: 3}
@@ -142,17 +144,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.02, y: -0.15}
+  m_Offset: {x: 0.02, y: -0.06}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.73, y: 1.3}
+  m_Size: {x: 0.91, y: 0.71}
   m_EdgeRadius: 0
 --- !u!58 &3835633232451716929
 CircleCollider2D:
@@ -190,6 +192,41 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 1.86
+--- !u!114 &2829986387434766574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928242878028921311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27dcd93cb2a33614382dca26f4403428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  missileReference: {fileID: 1201597129598790429, guid: 25bab9e36a975e54d8c12c3d27b0e5dc,
+    type: 3}
+  firepoint: {fileID: 6580064455410342103}
+  cannon: {fileID: 0}
+  cannonSpriteRenderer: {fileID: 381496752218138097}
+  state: 0
+--- !u!114 &1440445225463864132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928242878028921311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e15abec26fc2c11469654f6e767ab3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpMax: 4
+  smoke: {fileID: 2006679684889494683, guid: f2d4b9c58d4b5d94189a2e2529719069, type: 3}
+  explosion: {fileID: 8404128881088415328, guid: 697af36a47e004848ae3bf5f891609ba,
+    type: 3}
 --- !u!1 &6580064455410342103
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8325848865522100395}
   m_Layer: 2
-  m_Name: point
+  m_Name: firePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -214,10 +251,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6580064455410342103}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.21, y: 0.33, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.463, y: 0.161, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6226005319921143897}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}

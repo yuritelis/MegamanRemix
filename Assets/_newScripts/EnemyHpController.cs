@@ -4,75 +4,75 @@ using UnityEngine;
 
 public class EnemyHpController : MonoBehaviour
 {
-    [SerializeField] private int lives = 4;
+    [SerializeField] private int hpMax = 4;
     [SerializeField] ParticleSystem smoke;
     [SerializeField] ParticleSystem explosion;
 
-    int initialLives;
+    int hpAtual;
+    private bool isInvulnerable = false;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
-        initialLives = lives;
-    }
-
-    void Update()
-    {
-
-    }
-
-    private void OnParticleCollision(GameObject other)
-    {
-        StartCoroutine(Blink());
-
-        lives--;
-        if (lives < initialLives / 2)
+        hpAtual = hpMax;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (!spriteRenderer)
         {
-            CreateandPlay(smoke);
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         }
+    }
 
-        if (lives < 1)
+    void OnParticleCollision(GameObject other)
+    {
+        if (!isInvulnerable)
         {
-            CreateandPlay(explosion);
+            hpAtual--;
 
-            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-            if (!renderer)
+            StartCoroutine(Blink(0.2f));
+
+            if (hpAtual <= (hpMax / 2) && hpAtual > 0)
             {
-                renderer = GetComponentInChildren<SpriteRenderer>();
+                CreateAndPlayParticle(smoke);
             }
-            renderer.enabled = false;
-            Destroy(gameObject, 0.8f);
-        }
-    }
-    /// <summary>
-    /// cria uma particula e liga ela
-    /// </summary>
-    /// <param name="particle"> colocar aqui a referencia da particula (prefab)</param>
-    void CreateandPlay(ParticleSystem particle)
-    {
-        if (particle)
-        {
-            GameObject ob = Instantiate(particle.gameObject, transform.position, Quaternion.identity);
-            ob.transform.parent = gameObject.transform;
-            ob.GetComponent<ParticleSystem>().Play();
+            else if (hpAtual <= 0)
+            {
+                Die();
+            }
         }
     }
 
-    IEnumerator Blink()
+    void Die()
     {
-        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        if (!renderer)
+        CreateAndPlayParticle(explosion);
+        spriteRenderer.enabled = false;
+        Destroy(gameObject, 0.8f);
+    }
+
+    void CreateAndPlayParticle(ParticleSystem particlePrefab)
+    {
+        if (particlePrefab)
         {
-            renderer = GetComponentInChildren<SpriteRenderer>();
+            GameObject particleInstance = Instantiate(particlePrefab.gameObject, transform.position, Quaternion.identity);
+            particleInstance.transform.parent = transform;
+            particleInstance.GetComponent<ParticleSystem>().Play();
+
+            Destroy(particleInstance, 2f);
         }
-        for (int i = 0; i < 5; i++)
+    }
+
+    IEnumerator Blink(float duration)
+    {
+        isInvulnerable = true;
+        float blinkInterval = 0.1f;
+        float startTime = Time.time;
+        while (Time.time < startTime + duration)
         {
-            renderer.color = new Color(1, 0, 0);
-
-            yield return new WaitForSeconds(0.1f);
-
-            renderer.color = new Color(1, 1, 1);
-
-            yield return new WaitForSeconds(0.1f);
+            spriteRenderer.color = Color.red;
+            yield return new WaitForSeconds(blinkInterval);
+            spriteRenderer.color = Color.white;
+            yield return new WaitForSeconds(blinkInterval);
         }
+        spriteRenderer.color = Color.white;
+        isInvulnerable = false;
     }
 }

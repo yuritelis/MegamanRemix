@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class MissileAI : MonoBehaviour
 {
-
     public ParticleSystem explosion;
-    // Start is called before the first frame update
+
     void Start()
     {
         Destroy(gameObject, 4);
 
         GetComponent<Rigidbody2D>().AddForce(transform.up * 100);
     }
-
-
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

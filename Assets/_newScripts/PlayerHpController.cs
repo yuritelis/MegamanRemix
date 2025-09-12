@@ -6,33 +6,46 @@ using UnityEngine.SceneManagement;
 public class PlayerHpController : MonoBehaviour
 {
     [Header("Health Settings")]
-    public int hpAtual = 4;
+    public int hpAtual;
     public int hpMax = 4;
 
-    public HpUiControl hpUI;
     private SpriteRenderer spriteRenderer;
 
     int danoMissil = 2;
     int danoInimigo = 1;
 
+    private bool isInvulnerable = false;
+
     void Start()
     {
-        hpUI.SetMaxHearts(hpMax);
-
         spriteRenderer = GetComponent<SpriteRenderer>();
+        hpAtual = hpMax;
+
+        if (HpUiControl.instance != null)
+        {
+            HpUiControl.instance.SetMaxHearts(hpMax);
+        }
+        else
+        {
+            Debug.LogError("HpUiControl.instance é null. A UI de HP não pode ser inicializada.");
+        }
     }
 
     private void Update()
     {
-        if(hpAtual <= 0)
+        if (hpAtual <= 0)
         {
-            LevelManager.instance.LowDamage();
-            Start();
+            Die();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (isInvulnerable)
+        {
+            return;
+        }
+
         if (collision.collider.CompareTag("Enemy"))
         {
             TakeDamage(danoInimigo);
@@ -40,30 +53,29 @@ public class PlayerHpController : MonoBehaviour
         else if (collision.collider.CompareTag("Damage"))
         {
             TakeDamage(danoMissil);
-            Destroy(collision.gameObject);
         }
     }
 
     public void TakeDamage(int dano)
     {
         hpAtual -= dano;
-        Debug.Log($"[{gameObject.name}] Dano: {dano}, HP restante: {hpAtual}");
 
-        hpUI.UpdatedHearts(hpAtual);
+        if (HpUiControl.instance != null)
+        {
+            HpUiControl.instance.UpdatedHearts(hpAtual);
+        }
+        else
+        {
+            Debug.LogError("HpUiControl.instance é null. A UI de HP não pode ser atualizada.");
+        }
 
-        StartCoroutine(FlashRed());
         StartCoroutine(BlinkSprite());
-    }
-
-    private IEnumerator FlashRed()
-    {
-        spriteRenderer.color = Color.red;
-        yield return new WaitForSeconds(0.1f);
-        spriteRenderer.color = Color.white;
     }
 
     private IEnumerator BlinkSprite()
     {
+        isInvulnerable = true;
+
         float duration = 0.6f;
         float elapsed = 0f;
 
@@ -75,5 +87,13 @@ public class PlayerHpController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
             elapsed += 0.2f;
         }
+
+        isInvulnerable = false;
+    }
+
+    void Die()
+    {
+        GameManager.instance.RespawnPlayer();
+        Destroy(gameObject);
     }
 }
